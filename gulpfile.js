@@ -4,15 +4,15 @@
 
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
+    notify = require("gulp-notify") ,
+    browserify = require('gulp-browserify'),
+    sass = require('gulp-sass'),
     /*_______________________Coffeescript conversation____________________________*/
     /**/
     /**/    //coffee = require('gulp-coffee'),      /*Active this line for coffeescript*/
     /*________________________Coffeescript conversation end_______________________*/
 
 
-    browserify = require('gulp-browserify'),
-
-    sass = require('gulp-sass'),
 
     connect = require('gulp-connect'),
     gulpif = require('gulp-if'),
@@ -83,11 +83,14 @@ gulp.task('sass', function () {
 
     gulp.src(sassSources)
     // .pipe(sass({includePaths: ['components/sass'],outputStyle: 'compressed'}).on('error', gutil.log))
-        .pipe(gulpif(env === 'development', sass({includePaths: ['components/sass']}).on('error', gutil.log)))
+        .pipe(gulpif(env === 'dev', sass({includePaths: ['components/sass']}).on('error', gutil.log)))
         .pipe(gulpif(env === 'production', sass({
             includePaths: ['components/sass'],
             outputStyle: 'compressed'
         }).on('error', gutil.log)))
+        .on("error", notify.onError(function (error) {
+                        return "Error: " + error.message;
+                    }))
         .pipe(gulp.dest(outputDir + 'css'))
         .pipe(connect.reload())
 
