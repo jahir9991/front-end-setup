@@ -1,12 +1,12 @@
 {
-  "name": "amarmistri",
+  "name": "front-end-setup",
   "version": "0.0.1",
   "description": "A project to showcase workflows",
   "repository": {
     "type": "git",
-    "url": "https://github.com/planetoftheweb/workflows.git"
+    "url": "https://github.com/jahir9991/front-end-setup.git"
   },
-  "author": "Ray Villalobos",
+  "author": "Jahir Alam",
   "devDependencies": {
     "gulp": "^3.6.2",
     "gulp-browserify": "^0.5.0",
