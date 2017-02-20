@@ -1,0 +1,22 @@
+{
+  "name": "front-end-setup",
+  "description": "A setup for front-end workflows",
+  "main": "",
+  "authors": [
+    "Jahir Alam"
+  ],
+  "license": "MIT",
+  "homepage": "index",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "font-awesome-sass": "^4.7.0"
+  }
+}
